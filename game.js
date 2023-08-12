@@ -6,7 +6,6 @@ function getComputerChoice(arr) {
     return item;
 }
 const choices = ["Rock", "Paper", "Scissors"];
-const result = getComputerChoice(choices);
 
 let pscore = 0;
 let cscore = 0;
@@ -22,17 +21,18 @@ function playRound(playerSelection, computerSelection) {
     }
     else if ((playerSelection === "Paper" && computerSelection == "Scissors") ||
     (playerSelection === "Scissors" && computerSelection == "Rock") ||
-    (playerSelection === "Rock" && computerSelection == "Paper")) {
+    (playerSelection === "Rock" && computerSelection == "Paper")) 
+    {
         cscore++;
     }
 }
 
 function game(number) {
+    let result = getComputerChoice(choices);
     for(i = 0; i < number ; i++) {
         let input = prompt("Enter Rock, Paper, or scissors");
-        console.log("Computer's choice is", result);
         playRound(input.charAt(0).toUpperCase() + input.slice(1).toLowerCase(), result); 
-        console.log("Your score is ",pscore, "computers score is ", cscore);
+        console.log("Your choice is " + input + ". Computer's choice is " + result + "\nYour score is " + pscore + ". Computers score is " + cscore);
     }
 
     if(pscore > cscore) {
