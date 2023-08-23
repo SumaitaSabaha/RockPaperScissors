@@ -26,26 +26,17 @@ function playRound(playerSelection, computerSelection) {
         cscore++;
     }
 }
-
-function game(number) {
-    let result = getComputerChoice(choices);
-    for(i = 0; i < number ; i++) {
-        let input = prompt("Enter Rock, Paper, or scissors");
-        playRound(input.charAt(0).toUpperCase() + input.slice(1).toLowerCase(), result); 
-        console.log("Your choice is " + input + ". Computer's choice is " + result + "\nYour score is " + pscore + ". Computers score is " + cscore);
-    }
-
-    if(pscore > cscore) {
-        console.log("You win!");
-    }
-    else if (pscore == cscore) {
-        console.log("It's a tie!");
-    }
-    else {
-        console.log("You lose!");
-    }
+let result = getComputerChoice(choices);
+playRound(input.charAt(0).toUpperCase() + input.slice(1).toLowerCase(), result); 
+if(pscore > cscore) {
+    console.log("You win!");
 }
-let games = prompt("How many times do you wanna play? ");
-game(Number(games));
+else if (pscore == cscore) {
+    console.log("It's a tie!");
+}
+else {
+    console.log("You lose!");
+}
+
 
 
